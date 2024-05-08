@@ -59,7 +59,7 @@ jobs:
         # use a commit hash checked into a file to get the mypy revision to build.
         # submodules prove problematic since .git is outside cibuildwheel's manylinux container
         run: |
-          git clone https://github.com/python/mypy.git --recurse-submodules
+          git clone https://github.com/jenia90/mypy.git --recurse-submodules
           git -C mypy checkout $(cat mypy_commit)
 
       - uses: pypa/cibuildwheel@v2.17.0
@@ -87,7 +87,7 @@ jobs:
         shell: bash
         run: |
           COMMIT=$(cat mypy_commit)
-          git clone https://github.com/python/mypy.git
+          git clone https://github.com/jenia90/mypy.git
           cd mypy
           git checkout $COMMIT
           git submodule update --init --recursive
@@ -135,7 +135,7 @@ jobs:
         shell: bash
         run: |
           COMMIT=$(cat mypy_commit)
-          git clone https://github.com/python/mypy.git
+          git clone https://github.com/jenia90/mypy.git
           cd mypy
           git checkout $COMMIT
           git submodule update --init --recursive
